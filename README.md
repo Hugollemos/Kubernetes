@@ -83,10 +83,30 @@ nodes:
 # comando para ver os nodes
 kubectl get nodes
 
+# comando para ver os clsuters configurados
+```
+kubectl config get-clusters
+```
+# comando para espesificar um cluster para monitorar 
+```
+kubectl config use-context nome_do_clusters
+```
 # comando para ver os pods
 kubectl get pod ou kubectl get po
 
 # criando um pod
+```
+apiVersion: v1
+Kind: pod
+metadata:
+  name: "goserver"
+  labels: 
+    app: "goserver"
+spec:
+  containers:
+    - name: goserver
+      image: "hugo/demo:latest"
+```
 kubectl apply -f k8s/pod.yaml
 
 # mapeando as portas para expor
