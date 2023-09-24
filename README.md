@@ -55,13 +55,37 @@ pods":  unidade que contém os containers provisionados
 o pod representa os processos dorando no clsuter
 deploymenet
 
-## comandos para manipular um cluster com o kind
+---
+# kind
+## comandos para criar um cluster com o kind
 kind create cluster
+
+kink get clusters
+kind delete clusters kind
+>depois de criado, sera fornecido um comando para monitorar o cluster
+ex: kubectl cluster-info --context kind-kind 
+kind-kind é o nome do cluster
+
+# criando cluster com kind
+```
+kind: cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
+- role: worker
+```
+>criar arquivo yaml com esse script e usar o comando: kind create cluster --config=k8s/kind.yaml --name=cluster
+>o comando que ira aparecer kubectl cluster-info --context kind-cluster
+
 # comando para ver os nodes
 kubectl get nodes
 
 # comando para ver os pods
 kubectl get pod ou kubectl get po
+
 # criando um pod
 kubectl apply -f k8s/pod.yaml
 
