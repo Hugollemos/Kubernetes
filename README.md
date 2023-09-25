@@ -60,7 +60,7 @@ deploymenet
 ## comandos para criar um cluster com o kind
 kind create cluster
 
-kink get clusters
+kind get clusters
 kind delete clusters kind
 >depois de criado, sera fornecido um comando para monitorar o cluster
 ex: kubectl cluster-info --context kind-kind 
@@ -68,7 +68,7 @@ kind-kind é o nome do cluster
 
 # criando cluster com kind
 ```
-kind: cluster
+kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 
 nodes:
@@ -97,7 +97,7 @@ kubectl get pod ou kubectl get po
 # criando um pod
 ```
 apiVersion: v1
-Kind: pod
+kind: Pod
 metadata:
   name: "goserver"
   labels: 
@@ -105,11 +105,11 @@ metadata:
 spec:
   containers:
     - name: goserver
-      image: "hugo/demo:latest"
+      image: "hugollemos/demo:latest"
 ```
 kubectl apply -f k8s/pod.yaml
 
-# mapeando as portas para expor
+# redirecionando as portas para expor
 kubectl port-forward pod/goserver 80:80
 
 # deletando um pod
