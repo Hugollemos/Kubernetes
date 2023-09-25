@@ -116,28 +116,29 @@ kubectl port-forward pod/goserver 80:80
 kubectl delete pod goserver
 
 # replicaseat objeto que gerencia os pods
-kubectl apply -f k8s/replicaset.yaml
 ```
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: goserver
+  name: demo
   labels:
-    app: goserver
+    app: demo
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: goserver
-  replicas: 2
+      app: demo
   template:
     metadata:
-    labels:
-      app: "goserver"
+      labels:
+        app: demo
     spec:
       containers:
-        - name: goserver
-          image: "hugo/demo:latest"
+        - name: demo
+          image: hugollemos/teste:latest
+
 ```
+kubectl apply -f k8s/replicaset.yaml
 # objeto deployment
 ```
 apiVersion: apps/v1
