@@ -165,3 +165,13 @@ spec:
 Deployment > ReplicaSet > Pod
 
 ## Rollout e Revisoes
+kubectl rolout history deployment nome_do_deploy
+
+kubectl rollout undo deployment nome_do_deploy
+volta para a ultima versao
+
+kubectl rollout undo deployment nome_do_deploy --to-revision
+para espesificar uma versao na qual se deseja voltar.
+
+# services
+services é a porta de entrada para a aplicação, 
