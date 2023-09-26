@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
   name: goserver
   labels:
@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: goserver
-          image: "hugo/demo:latest"
+          image: "hugollemos/demo:latest"

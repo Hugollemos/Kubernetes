@@ -161,3 +161,7 @@ spec:
         - name: goserver
           image: "hugo/demo:latest"
 ```
+## Deployment
+Deployment > ReplicaSet > Pod
+
+## Rollout e Revisoes
