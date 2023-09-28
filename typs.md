@@ -55,3 +55,10 @@ kubectl run nginx --image nginx --port 80
 loadbanacer
 kubectl port-forward svc/nginx 8080:80
 
+kubctl create deployment hugoteste --imagem nginx --port 80 --replicas 3  
+kubectl exec -ti pod -- bash
+kubectl create deployment --image nginx nginx 
+lubectl get deployment
+kubectl get replicaset
+kubectl expose deployment webserver --port 80 --target-port 80
+kubectl get endpoints webserver 
