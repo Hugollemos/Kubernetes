@@ -8,3 +8,5 @@ spec:
   containers:
     - name: demo
       image: "hugollemos/teste:latest"
+
+# kubectl apply -f k8s/pod.yaml
