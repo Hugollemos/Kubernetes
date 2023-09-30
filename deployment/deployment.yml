@@ -11,9 +11,11 @@ spec:
   replicas: 2
   template:
     metadata:
-    labels:
-      app: "goserver"
+      labels:
+        app: "goserver"
     spec:
       containers:
         - name: goserver
-          image: "hugollemos/demo:latest"
+          image: "hugollemos/teste:latest"
+
+# kubectl apply -f deployment.yml

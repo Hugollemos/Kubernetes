@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: demo
-      image: "hugollemos/teste:latest"
+      image: "hugollemos/hello-go:latest"
 
-# kubectl apply -f k8s/pod.yaml
+# kubectl apply -f k8s/pod/pod.yaml
