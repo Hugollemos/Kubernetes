@@ -17,5 +17,17 @@ spec:
       containers:
         - name: goserver
           image: "hugollemos/teste:latest"
+          env:
+            - name: NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: goserver-env
+                  key: NAME
+
+            - name: AGE
+              valueFrom:
+                configMapKeyRef:
+                  name: goserver-env
+                  key: AGE
 
 # kubectl apply -f deployment.yml

@@ -33,3 +33,55 @@ para espesificar uma versao na qual se deseja voltar.
 
 # services
 services é a porta de entrada para a aplicação.
+
+# kubectl get svc
+Ver os services
+
+kubectl port-forward svc/nome_do_serivce porta_mapeada
+
+# utilizando proxy para acessar API do kubernetes
+kubectl proxy --port=8080
+
+# Utilizando NodePort
+seta portas para os nó
+sintaxe
+```
+selector:
+    app: goserver
+  type: NodePort
+  ports:
+  - name: goserver-service
+    port: 80
+    targetPort: 8000
+    protocol: TCP
+    nodePort: 30001
+```
+
+# LoadBalancer
+```
+selector:
+    app: goserver
+  type: LoadBalancer
+  ports:
+  - name: goserver-service
+    port: 80
+    targetPort: 8000
+    protocol: TCP
+```
+# Variáveis de ambiente
+```
+ spec:
+      containers:
+        - name: goserver
+          image: "hugollemos/teste:latest"
+          env:
+            - name: NAME
+              value: "hugo"
+            - name: AGE
+              value: "24"
+```
+# ConfigMap
+
+# Probes/ Healthz
+
+
