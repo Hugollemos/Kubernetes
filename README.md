@@ -24,6 +24,7 @@ kubectl delete pod goserver
 Deployment > ReplicaSet > Pod
 
 ## Rollout e Revisoes
+>historicos da versoes dos deployment
 kubectl rollout history deployment nome_do_deploy
 
 kubectl rollout undo deployment nome_do_deploy
@@ -82,6 +83,6 @@ selector:
 ```
 # ConfigMap
 
-# Probes/ Healthz
+# Probes/ Health
 
 

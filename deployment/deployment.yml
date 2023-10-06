@@ -17,6 +17,7 @@ spec:
       containers:
         - name: goserver
           image: "hugollemos/teste:latest"
+          
           env:
             - name: NAME
               valueFrom:
