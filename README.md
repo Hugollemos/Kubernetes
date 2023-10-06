@@ -27,16 +27,18 @@ Deployment > ReplicaSet > Pod
 >historicos da versoes dos deployment
 kubectl rollout history deployment nome_do_deploy
 
+> volta para ultima vesao que estava rodando
 kubectl rollout undo deployment nome_do_deploy
 
+>volta para a versao especificada na qual se deseja voltar.
 kubectl rollout undo deployment nome_do_deploy --to-revision
-para espesificar uma versao na qual se deseja voltar.
 
 # services
-services é a porta de entrada para a aplicação.
+services é a porta de entrada para a aplicação que por default não da para acessar.
+>O service também atua como load balancer 
 
-# kubectl get svc
-Ver os services
+# Ver os services
+kubectl get svc
 
 kubectl port-forward svc/nome_do_serivce porta_mapeada
 
