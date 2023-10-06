@@ -35,30 +35,10 @@ kubectl rollout undo deployment nome_do_deploy --to-revision
 
 # services
 services é a porta de entrada para a aplicação que por default não da para acessar.
->O service também atua como load balancer 
-
-# Ver os services
-kubectl get svc
-
-kubectl port-forward svc/nome_do_serivce porta_mapeada
+obs: O service também atua como load balancer 
 
 # utilizando proxy para acessar API do kubernetes
 kubectl proxy --port=8080
-
-# Utilizando NodePort
-seta portas para os nó
-sintaxe
-```
-selector:
-    app: goserver
-  type: NodePort
-  ports:
-  - name: goserver-service
-    port: 80
-    targetPort: 8000
-    protocol: TCP
-    nodePort: 30001
-```
 
 # LoadBalancer
 ```

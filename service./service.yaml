@@ -13,3 +13,7 @@ spec:
     protocol: TCP
 
 # kubectl apply -f ./service.yml
+# kubectl get svc
+# kubectl port-forward svc/nome_do_serivce porta_mapeada:porta_mapeada
+
+#port é a porta do service, targetPort é a porta do container
