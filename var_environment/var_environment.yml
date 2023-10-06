@@ -1,0 +1,9 @@
+spec:
+      containers:
+        - name: goserver
+          image: "hugollemos/teste:latest"
+          env:
+            - name: NAME
+              value: "hugo"
+            - name: AGE
+              value: "24"

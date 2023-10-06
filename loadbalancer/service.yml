@@ -11,6 +11,5 @@ spec:
     port: 80
     targetPort: 8000
     protocol: TCP
-    nodePort: 30001
 
 #O LoadBalancer é uma opção quando você deseja distribuir o tráfego externo entre os pods do serviço de forma balanceada e quando está usando um provedor de nuvem que oferece esse tipo de serviço de balanceamento de carga. 

@@ -40,17 +40,6 @@ obs: O service também atua como load balancer
 # utilizando proxy para acessar API do kubernetes
 kubectl proxy --port=8080
 
-# LoadBalancer
-```
-selector:
-    app: goserver
-  type: LoadBalancer
-  ports:
-  - name: goserver-service
-    port: 80
-    targetPort: 8000
-    protocol: TCP
-```
 # Variáveis de ambiente
 ```
  spec:
