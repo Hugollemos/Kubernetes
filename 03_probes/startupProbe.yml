@@ -18,14 +18,6 @@ spec:
         - name: goserver
           image: "hugollemos/hello-go:v9.6"
 
-          resources:
-            requests: 
-              cpu: "0.05"
-              memory: 20Mi
-            limits:
-              cpu: "0.05"
-              memory: 25Mi
-
           startupProbe:
             httpGet:
               path: /healthz
@@ -50,29 +42,3 @@ spec:
             timeoutSeconds: 1
             successThreshold: 1
             # initialDelaySeconds: 15
-
-          envFrom:
-            - configMapRef:
-                name: goserver-env
-            - secretRef:
-                name: goserver-secret
-          
-          volumeMounts:
-            - mountPath: "/go/myfamily"
-              name: config
-              readOnly: true
-            - mountPath: "/go/pvc"
-              name: goserver-volume
-
-      volumes:
-        - name: goserver-volume
-          persistentVolumeClaim:
-            claimName: goserver-pvc
-
-        - name: config
-          configMap:
-            name: configmap-family
-            items:
-            - key: members
-              path: "family.txt"  
-      
