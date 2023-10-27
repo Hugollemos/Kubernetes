@@ -54,4 +54,74 @@ kubectl proxy --port=8080
 
 # Probes/ Health
 
+----
+kubectl get namespaces
 
+kubectl get pod -n kube-system
+
+kubectl get pods -A
+
+kubectl get pods -A -o wide
+
+kubectl run nginx --image nginx
+
+kubectl run giropops --image=nginx --port=80
+
+kubectl get pods --all-namespaces
+
+```
+apiVersion: v1 # versão da API do Kubernetes
+kind: Pod # tipo do objeto que estamos criando
+metadata: # metadados do Pod 
+  name: giropops # nome do Pod que estamos criando
+labels: # labels do Pod
+  run: giropops # label run com o valor giropops
+spec: # especificação do Pod
+  containers: # containers que estão dentro do Pod
+  - name: giropops # nome do container
+    image: nginx # imagem do container
+    ports: # portas que estão sendo expostas pelo container
+    - containerPort: 80 # porta 80 exposta pelo container
+```
+
+```
+apiVersion: v1 # versão da API do Kubernetes
+kind: Pod # tipo do objeto que estamos criando
+metadata: # metadados do Pod 
+  name: giropops # nome do Pod que estamos criando
+labels: # labels do Pod
+  run: giropops # label run com o valor giropops
+spec: # especificação do Pod
+  containers: # containers que estão dentro do Pod
+  - name: girus # nome do container
+    image: nginx # imagem do container
+    ports: # portas que estão sendo expostas pelo container
+    - containerPort: 80 # porta 80 exposta pelo container
+  - name: strigus # nome do container
+    image: alpine # imagem do container
+    args:
+    - sleep
+    - "1800"
+```
+
+```
+apiVersion: v1 # versão da API do Kubernetes
+kind: Pod # tipo do objeto que estamos criando
+metadata: # metadados do Pod
+  name: giropops # nome do Pod que estamos criando
+labels: # labels do Pod
+  run: giropops # label run com o valor giropops
+spec: # especificação do Pod 
+  containers: # containers que estão dentro do Pod 
+  - name: girus # nome do container 
+    image: nginx # imagem do container
+    ports: # portas que estão sendo expostas pelo container
+    - containerPort: 80 # porta 80 exposta pelo container
+    resources: # recursos que estão sendo utilizados pelo container
+      limits: # limites máximo de recursos que o container pode utilizar
+        memory: "128Mi" # limite de memória que está sendo utilizado pelo container, no caso 128 megabytes no máximo 
+        cpu: "0.5" # limite máxima de CPU que o container pode utilizar, no caso 50% de uma CPU no máximo
+      requests: # recursos garantidos ao container
+        memory: "64Mi" # memória garantida ao container, no caso 64 megabytes
+        cpu: "0.3" # CPU garantida ao container, no caso 30% de uma CPU
+```
