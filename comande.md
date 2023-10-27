@@ -60,9 +60,10 @@ kubectl get namespaces
 kubectl get pod -n kube-system
 
 kubectl get pods -A
+lista todos os pods de todos os namespaces 
 
 kubectl get pods -A -o wide
-
+disponibiliza maiores informacoes sobre o recurso, inclusive em qual nó o pods está 
 kubectl run nginx --image nginx
 
 kubectl run giropops --image=nginx --port=80
@@ -125,3 +126,10 @@ spec: # especificação do Pod
         memory: "64Mi" # memória garantida ao container, no caso 64 megabytes
         cpu: "0.3" # CPU garantida ao container, no caso 30% de uma CPU
 ```
+
+
+O k8s organiza tudo dentro de namespaces. Por meio deles, podem ser realizadas limitações de segurança e de recursos dentro do cluster, tais como pods, replication controllers e diversos outros. Para visualizar os namespaces disponíveis no cluster, digite:
+
+kubectl get namespaces
+
+kubectl run meu-nginx --image nginx --dry-run=client -o yaml > pod-template.yaml
