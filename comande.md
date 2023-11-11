@@ -133,3 +133,25 @@ O k8s organiza tudo dentro de namespaces. Por meio deles, podem ser realizadas l
 kubectl get namespaces
 
 kubectl run meu-nginx --image nginx --dry-run=client -o yaml > pod-template.yaml
+podemos simular a criação de um resource e ainda ter um manifesto criado automaticamente.
+
+
+kubectl get all
+
+kubectl get pod,service
+
+kubectl get pod,svc
+ver  os recursos recem criados
+```
+strategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 2
+```
+maxSurge: define a quantidade máxima de Pods que podem ser criados a mais durante a atualização, ou seja, durante o processo de atualização, nós podemos ter 1 Pod a mais do que o número de Pods definidos no Deployment. Isso é útil pois agiliza o processo de atualização, pois o Kubernetes não precisa esperar que um Pod seja atualizado para criar um novo Pod.
+
+maxUnavailable: define a quantidade máxima de Pods que podem ficar indisponíveis durante a atualização, ou seja, durante o processo de atualização, nós podemos ter 1 Pod indisponível por vez. Isso é útil pois garante que o serviço não fique indisponível durante a atualização.
+
+type: define o tipo de estratégia de atualização que será utilizada, no nosso caso, nós estamos utilizando a estratégia RollingUpdate.
+
