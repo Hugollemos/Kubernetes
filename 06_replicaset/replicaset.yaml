@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: demo
+  labels:
+    app: demo
+spec:
+  selector:
+    matchLabels:
+      app: demo
+  replicas: 7
+  template:
+    metadata:
+    labels:
+      app: "demo"
+    spec:
+      containers:
+        - name: demo
+          image: "hugo/demo:latest"
