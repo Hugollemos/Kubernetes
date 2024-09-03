@@ -1,7 +1,7 @@
 # Componentes da camada de gerenciamento
 
 # kube-apiserver
-### O servidor da API é um componente da camada de gerenciamento do Kubernetes que expõe a API do Kubernetes. O servidor da API é o front end para a camada de gerenciamento do Kubernetes.
+### O kube-apiserver é um dos componentes centrais do Kubernetes, responsável por expor a API do Kubernetes e servir como ponto de entrada para todos os comandos de gerenciamento de clusters. Ele é a interface central de comunicação entre os diversos componentes do cluster e os clientes externos.
 
 # etcd
 ### Armazenamento do tipo chave-valor consistente e de alta-disponibilidade, usado como armazenamento de apoio do Kubernetes para todos os dados do cluster.
