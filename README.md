@@ -110,20 +110,32 @@ kubectl proxy --port=8080
 ## 📁 Estrutura do Projeto
 
 ```
-├── README.md                      # Este arquivo
-├── Kubernetes_Architecture/       # Documentação da arquitetura
-├── Services/                      # Configurações de serviços
-├── pod/                          # Manifestos de pods
-├── deployment/                   # Configurações de deployments
-├── replicaset/                   # Configurações de ReplicaSets
-├── resources_and_HPA/            # Recursos e Horizontal Pod Autoscaler
-├── statefulsets_volumes/         # StatefulSets e volumes
-├── var_environment/              # Variáveis de ambiente e ConfigMaps
-├── probes/                       # Health checks (liveness, readiness, startup)
-├── minikube/                     # Configurações específicas do Minikube
-└── iac/                          # Infrastructure as Code (Terraform)
-    ├── my-eks/                   # Cluster EKS completo
-    └── my-eks-existing-vpc/      # EKS com VPC existente
+├── README.md                           # Este arquivo
+├── docs/                              # Documentação completa
+│   ├── architecture/                  # Arquitetura do Kubernetes
+│   ├── commands-reference.md          # Referência de comandos
+│   ├── kubernetes-concepts.md         # Conceitos fundamentais
+│   └── minikube/                      # Guia do Minikube
+├── kubernetes-resources/              # Recursos do Kubernetes organizados
+│   ├── core/                          # Recursos core
+│   │   └── pods/                      # Configurações de pods
+│   ├── workloads/                     # Cargas de trabalho
+│   │   ├── deployments/               # Deployments
+│   │   ├── replicasets/               # ReplicaSets
+│   │   └── statefulsets/              # StatefulSets e volumes
+│   ├── networking/                    # Recursos de rede
+│   │   └── services/                  # Configurações de serviços
+│   ├── config/                        # Configurações
+│   │   └── var_environment/           # Variáveis de ambiente e ConfigMaps
+│   └── monitoring/                    # Monitoramento
+│       ├── probes/                    # Health checks
+│       └── hpa/                       # Horizontal Pod Autoscaler
+├── infrastructure/                    # Infrastructure as Code
+│   └── terraform/                     # Projetos Terraform
+│       ├── my-eks/                    # Cluster EKS completo
+│       └── my-eks-existing-vpc/       # EKS com VPC existente
+└── examples/                          # Exemplos práticos
+    └── nginx.yml                      # Exemplo de deployment nginx
 ```
 
 ## 📊 Monitoramento
@@ -148,22 +160,24 @@ free                # Uso de memória
 ## 🚀 Recursos Adicionais
 
 ### Documentação Detalhada
-- [Arquitetura Kubernetes](./Kubernetes_Architecture/readme.md)
-- [Configuração de Serviços](./Services/readme.md)
-- [Comandos Essenciais](./comande.md)
-- [Guia do Minikube](./minikube/Readme.md)
-- [Infrastructure as Code](./iac/)
+- [Arquitetura Kubernetes](./docs/architecture/readme.md)
+- [Conceitos Fundamentais](./docs/kubernetes-concepts.md)
+- [Comandos Essenciais](./docs/commands-reference.md)
+- [Guia do Minikube](./docs/minikube/Readme.md)
+- [Infrastructure as Code](./infrastructure/terraform/)
 
-### Manifestos de Exemplo
-- [Pods](./pod/)
-- [Deployments](./deployment/)
-- [Services](./Services/)
-- [ConfigMaps](./var_environment/)
-- [Health Checks](./probes/)
+### Recursos do Kubernetes
+- [Pods](./kubernetes-resources/core/pods/)
+- [Deployments](./kubernetes-resources/workloads/deployments/)
+- [Services](./kubernetes-resources/networking/services/)
+- [ConfigMaps](./kubernetes-resources/config/var_environment/)
+- [Health Checks](./kubernetes-resources/monitoring/probes/)
+- [StatefulSets](./kubernetes-resources/workloads/statefulsets/)
+- [HPA](./kubernetes-resources/monitoring/hpa/)
 
 ### Projetos Práticos
-- [Cluster EKS Completo](./iac/my-eks/)
-- [EKS com VPC Existente](./iac/my-eks-existing-vpc/)
+- [Cluster EKS Completo](./infrastructure/terraform/my-eks/)
+- [EKS com VPC Existente](./infrastructure/terraform/my-eks-existing-vpc/)
 
 ---
 
